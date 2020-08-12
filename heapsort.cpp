@@ -1,56 +1,62 @@
 
+/* This program is a modified version of heapsort code from https://www.geeksforgeeks.org/heap-sort/. */
 
 #include <iostream>
 
 using namespace std;
 
-void heapify(int* arr, int n, int i) 
+void heapify(int* array, int n, int i) 
 { 
     int largest = i; // Initialize largest as root 
     int l = 2*i + 1; // left = 2*i + 1 
     int r = 2*i + 2; // right = 2*i + 2 
   
     // If left child is larger than root 
-    if (l < n && arr[l] > arr[largest]) 
+    if (l < n && array[l] > array[largest]) 
         largest = l; 
   
     // If right child is larger than largest so far 
-    if (r < n && arr[r] > arr[largest]) 
+    if (r < n && array[r] > array[largest]) 
         largest = r; 
   
     // If largest is not root 
     if (largest != i) 
     { 
-        swap(arr[i], arr[largest]); 
+        swap(array[i], array[largest]); 
   
         // Recursively heapify the affected sub-tree 
-        heapify(arr, n, largest); 
+        heapify(array, n, largest); 
     } 
 }
 
-void printArray(int* arr, int n) 
+void printArray(int* array, int n) 
 { 
     for (int i=0; i<n; ++i) 
-        cout << arr[i] << " "; 
-    cout << "\n"; 
+        cout << array[i] << " "; 
+    cout << endl << endl; 
 } 
 
 // main function to do heap sort 
-void heapSort(int* arr, int n) 
+void heapSort(int* array, int n) 
 { 
     // Build heap (rearrange array) 
     for (int i = n / 2 - 1; i >= 0; i--) 
-        heapify(arr, n, i); 
+        heapify(array, n, i); 
     
-    printArray(arr, n); 
+    cout << endl << "Result of turning the initial array to a max-heap:" << endl; 
+    printArray(array, n); 
+
     // One by one extract an element from heap 
     for (int i=n-1; i>0; i--) 
     { 
         // Move current root to end 
-        swap(arr[0], arr[i]); 
+        swap(array[0], array[i]); 
   
         // call max heapify on the reduced heap 
-        heapify(arr, i, 0); 
+        heapify(array, i, 0); 
+
+        cout << "Swapping the root node and re-heapifying the max-heap:" << endl;
+        printArray(array, n);
     } 
 } 
 
@@ -69,11 +75,10 @@ int main()
       {cout << "Enter " << i+1 << " of " << size <<":";
           cin >> array[i];}
       
-    cout << "done" <<endl;
     heapSort(array, size); 
     
   
-    cout << "Sorted array is \n"; 
+    cout << "Final Sorted array is \n"; 
     printArray(array, size);
     
     delete[] array;
