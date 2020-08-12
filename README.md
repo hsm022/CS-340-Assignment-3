@@ -28,3 +28,6 @@ heapsort.cpp is a modified version of heapsort code from https://www.geeksforgee
 - Select C++ as the language
 - Copy the code from heapsort.cpp and paste it on onlinegdb website.
 - Click Run
+
+## Sample Run on youtube
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/u4gHpJ1R0Lw/0.jpg)](https://youtu.be/u4gHpJ1R0Lw)
