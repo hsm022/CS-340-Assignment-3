@@ -10,7 +10,7 @@ This repository contains part 2 of assignment 3.
 **Topic: Heapsort**
 
 # Description: 
-I am choosing heapsort to implement in c++ programming language for part two of my thrid CS340 assignment. This project only has one file. 
+I am choosing heapsort to implement in c++ programming language for part two of my third CS340 assignment. This project only has one file. 
 
 **heapsort.cpp :**
 This file contains the source code of the heapsort. It prompts the user to enter the total number of inputs he/she will be entering. Once user provides a number the program creates a dynamic array and asks the user to provide the inputs. Once all the inputs are entered, the program generates a max-heap and starts sorting the array. Once the array is sorted it is printed on the screen.
